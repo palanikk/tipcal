@@ -19,7 +19,7 @@ Spent some time to unserstand lable color change using UIColor.
 
 Walkthrough of all user stories:
 
-![Video Walkthrough](anim_rotten_tomatoes.gif)
+![Video Walkthrough](TipCal.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
