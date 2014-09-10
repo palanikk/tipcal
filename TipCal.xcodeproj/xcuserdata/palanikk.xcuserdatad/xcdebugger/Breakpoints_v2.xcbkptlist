@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TipCal/TipViewController.m"
-            timestampString = "432019502.799334"
+            timestampString = "432052467.468695"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "-updateTipCaulator"
             landmarkType = "5">
          </BreakpointContent>

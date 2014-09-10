@@ -44,6 +44,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    [numberFormatter setMaximumFractionDigits:2];
+    [numberFormatter setMinimumFractionDigits:2];
+    
+    self.billTextField.text = [numberFormatter stringFromNumber:[NSNumber numberWithInt:0]];
+    
     // Do any additional setup after loading the view from its nib.
     [self.billTextField becomeFirstResponder];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(onSettingsButton)];
@@ -71,6 +79,20 @@
 
 - (void) updateTipCaulator {
     float billAmount = [self.billTextField.text floatValue];
+    
+    NSString *textFieldStr = [NSString stringWithFormat:@"%@", self.billTextField.text];
+    
+    NSMutableString *textFieldStrValue = [NSMutableString stringWithString:textFieldStr];
+    
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    
+    [textFieldStrValue replaceOccurrencesOfString:numberFormatter.currencySymbol
+                                       withString:@""
+                                          options:NSLiteralSearch
+                                            range:NSMakeRange(0, [textFieldStrValue length])];
+    
+    
     int splitBy = self.sliderControl.value;
     
     
